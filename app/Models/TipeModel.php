@@ -23,4 +23,9 @@ class TipeModel extends Model
         return $this->belongsTo(Kategori::class);
     }
 
+    public function katalogmobil()
+    {
+        return $this->hasMany(KatalogMobil::class);
+    }
+
 }

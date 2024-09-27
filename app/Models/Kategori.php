@@ -20,4 +20,11 @@ class Kategori extends Model
     {
         return $this->hasMany(TipeModel::class);
     }
+
+    public function katalogmobil()
+    {
+        return $this->hasMany(KatalogMobil::class);
+    }
+
+
 }

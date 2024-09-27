@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\TipeModelResource\Pages;
 use App\Filament\Resources\TipeModelResource\RelationManagers;
+use App\Models\Kategori;
 use App\Models\TipeModel;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -28,6 +29,8 @@ class TipeModelResource extends Resource
     protected static ?string $model = TipeModel::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-truck';
+
+    protected static ?string $navigationGroup = 'Master Data';
 
     public static function form(Form $form): Form
     {
@@ -57,6 +60,7 @@ class TipeModelResource extends Resource
                                 Forms\Components\Select::make('kategori_id')
                                     ->label('Kategori')
                                     ->relationship('kategori', 'nama')
+                                    ->options(Kategori::all()->pluck('nama', 'id'))
                                     ->searchable()
                                     ->required(),
                             ]),
