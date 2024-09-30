@@ -67,8 +67,7 @@ class TipeModelResource extends Resource
 
                         Forms\Components\TextInput::make('video_link')
                                 ->label('Link Video')
-                                ->placeholder('Link Video Tipe Model')
-                                ->url(),
+                                ->placeholder('Link Video Tipe Model'),
 
                         //content
                         Forms\Components\Textarea::make('deskripsi')
@@ -107,6 +106,7 @@ class TipeModelResource extends Resource
             ]);
     }
 
+
     public static function infolist(Infolist $infolist): Infolist
     {
         return $infolist
@@ -119,7 +119,7 @@ class TipeModelResource extends Resource
                         ->size('lg')
                         ->alignCenter(),
                     TextEntry::make('nama')->label('Nama Model'),
-                    TextEntry::make('deskripsi')->label('Deskripsi Model'),
+                    TextEntry::make('deskripsi')->label('Deskripsi Model')->alignJustify(),
                     ViewEntry::make('video_link')
                         ->label('Video YouTube')
                         ->view('infolists.components.youtube'),

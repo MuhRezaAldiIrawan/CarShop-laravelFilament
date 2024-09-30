@@ -15,7 +15,8 @@ class TipeModel extends Model
         'kategori_id',
         'gambar',
         'nama',
-        'deskripsi'
+        'deskripsi',
+        'video_link'
     ];
 
     public function kategori()
